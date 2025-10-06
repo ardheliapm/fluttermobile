@@ -27,6 +27,15 @@ Every night without you hurtin' double XL
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar( // ✅ Tambah AppBar biar jelas pindah halaman
+        title: Text(
+          "Lyrics Page",
+          style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.purple.shade900,
+        foregroundColor: Colors.white,
+        centerTitle: true,
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -56,6 +65,7 @@ Every night without you hurtin' double XL
               // Lirik dengan card transparan
               Expanded(
                 child: SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Container(
                     padding: EdgeInsets.all(20),
@@ -70,7 +80,7 @@ Every night without you hurtin' double XL
                         height: 1.6,
                         color: Colors.white,
                       ),
-                      textAlign: TextAlign.right, // rata kanan
+                      textAlign: TextAlign.left, // lebih enak dibaca rata kiri
                     ),
                   ),
                 ),
