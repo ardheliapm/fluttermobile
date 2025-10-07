@@ -7,20 +7,20 @@ void main() {
 
 class DellaApp extends StatelessWidget {
   @override
-  Widget build(BuildContext cotext) {
+  Widget build(BuildContext context) {
     return MaterialApp( 
     title: "Della App", //luar aplikasi
     home: Scaffold( //satu layar
-      appBar: AppBar( title: Text("Della App", 
-      style: TextStyle(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        fontFamily: 'Times New Roman',
-      ),),
-      backgroundColor: Colors.pink,
-      centerTitle: true,
-      foregroundColor: Colors.white,
-      //leading: const Icon(Icons.menu),
+      appBar: AppBar( 
+        title:Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const[
+            Text('Flutternya Della', style: TextStyle(fontSize:24)),
+            Text('Della App', style: TextStyle(fontSize:14)),
+          ],
+        ),
+      centerTitle: false,
+      foregroundColor: const Color.fromARGB(255, 232, 67, 133),
       actions: const[
         Icon(Icons.search),
         SizedBox(width: 10),
@@ -28,27 +28,27 @@ class DellaApp extends StatelessWidget {
         SizedBox(width: 10),
         Icon(Icons.settings)
       ],
-      ),
-      body: Center(child: Text("Welcome to Della App")),
-      floatingActionButton: FloatingActionButton(
+    ),
+    backgroundColor: const Color.fromARGB(255, 224, 164, 184),
+    body: Center(child: Text("Welcome to Della App", style: TextStyle(fontSize: 20,color: Colors.white))),  
+    floatingActionButton: FloatingActionButton(
       onPressed: () {},
       tooltip: 'Increment',
       child: const Icon(Icons.add),
-    ),
+    ),  
+      //leading: const Icon(Icons.menu)
     drawer: Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
         children: const <Widget>[
           DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.white,
-            ),
-            child: Text(
+            decoration: const BoxDecoration(
+              color: Color.fromARGB(255, 187, 51, 121)),
+            child: const Text(
               'Drawer Header',
               style: TextStyle(
-                color: Colors.pink,
-                fontSize: 24,
-            ),
+                color: Color.fromARGB(255, 232, 232, 232),
+                fontSize: 24),
           ),
         ),
         ListTile(
@@ -61,7 +61,8 @@ class DellaApp extends StatelessWidget {
         ),
         ListTile(
           leading: Icon(Icons.settings),
-          title: Text('Settings'),)
+          title: Text('Settings'),
+          ),
         ],
       ),
     ),
@@ -69,21 +70,22 @@ class DellaApp extends StatelessWidget {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'Home',
+          label: 'Home'
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.business),
-          label: 'Business',
+          label: 'Business'
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.school),
-          label: 'School',
+          label: 'School'
         ),
       ],
     ),
-
-      ),
-  );
+  ),
+  
+);
+  
   }
 
 }
