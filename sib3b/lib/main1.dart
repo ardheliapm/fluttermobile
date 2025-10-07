@@ -1,92 +1,111 @@
 import 'package:flutter/material.dart';
 
 void main() {
-
-  runApp( DellaApp());
+  runApp(const DellaApp());
 }
 
 class DellaApp extends StatelessWidget {
+  const DellaApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( 
-    title: "Della App", //luar aplikasi
-    home: Scaffold( //satu layar
-      appBar: AppBar( 
-        title:Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const[
-            Text('Flutternya Della', style: TextStyle(fontSize:24)),
-            Text('Della App', style: TextStyle(fontSize:14)),
+    return MaterialApp(
+      title: 'Della App',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Row(
+            children: const [
+              Icon(Icons.account_circle, size: 40,color: Colors.white,),
+              SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Flutternya Della', style: TextStyle(fontSize: 18,color: Colors.white)),
+                    Text('Della App', style: TextStyle(fontSize: 12,color: Colors.white70)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          centerTitle: false,
+          foregroundColor: Color.fromARGB(255, 253, 253, 253),
+          backgroundColor: Color.fromARGB(255, 187, 51, 121),
+          actions: const [
+            Icon(Icons.search),
+            SizedBox(width: 10),
+            Icon(Icons.more_vert),
+            SizedBox(width: 10),
+            Icon(Icons.settings),
+            SizedBox(width: 8),
           ],
         ),
-      centerTitle: false,
-      foregroundColor: const Color.fromARGB(255, 232, 67, 133),
-      actions: const[
-        Icon(Icons.search),
-        SizedBox(width: 10),
-        Icon(Icons.more_vert),
-        SizedBox(width: 10),
-        Icon(Icons.settings)
-      ],
-    ),
-    backgroundColor: const Color.fromARGB(255, 224, 164, 184),
-    body: Center(child: Text("Welcome to Della App", style: TextStyle(fontSize: 20,color: Colors.white))),  
-    floatingActionButton: FloatingActionButton(
-      onPressed: () {},
-      tooltip: 'Increment',
-      child: const Icon(Icons.add),
-    ),  
-      //leading: const Icon(Icons.menu)
-    drawer: Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: const <Widget>[
-          DrawerHeader(
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 187, 51, 121)),
-            child: const Text(
-              'Drawer Header',
-              style: TextStyle(
-                color: Color.fromARGB(255, 232, 232, 232),
-                fontSize: 24),
+        backgroundColor: const Color.fromARGB(255, 224, 164, 184),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const <Widget>[
+              Text('You have pushed the button this many times:', style: TextStyle(color: Colors.white),),
+              SizedBox(height: 8),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.star, color: Colors.amber),
+                  Icon(Icons.star, color: Colors.amber),
+                  Icon(Icons.star, color: Colors.amber),
+                  Icon(Icons.star_half, color: Colors.amber),
+                  Icon(Icons.star_border, color: Colors.amber),
+                ],
+              ),
+            ],
+          ),
+        ), // <- pastikan Center ditutup di sini
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: const <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 187, 51, 121),
+                ),
+                child: Text(
+                  'Drawer Header',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 232, 232, 232),
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.message),
+                title: Text('Messages'),
+              ),
+              ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text('Profile'),
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text('Settings'),
+              ),
+            ],
           ),
         ),
-        ListTile(
-          leading: Icon(Icons.message),
-          title: Text('Messages'),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
+            BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
+          ],
         ),
-        ListTile(
-          leading: Icon(Icons.account_circle),
-          title: Text('Profile'),
-        ),
-        ListTile(
-          leading: Icon(Icons.settings),
-          title: Text('Settings'),
-          ),
-        ],
       ),
-    ),
-    bottomNavigationBar: BottomNavigationBar(
-      items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home'
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.business),
-          label: 'Business'
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.school),
-          label: 'School'
-        ),
-      ],
-    ),
-  ),
-  
-);
-  
+    );
   }
-
 }
