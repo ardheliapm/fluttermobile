@@ -12,7 +12,8 @@ class DellaApp extends StatelessWidget {
     title: "Della App", //luar aplikasi
     home: Scaffold( //satu layar
       appBar: AppBar( 
-        title:Column(
+        title:Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const[
             Text('Flutternya Della', style: TextStyle(fontSize:24)),
