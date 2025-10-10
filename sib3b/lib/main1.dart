@@ -81,6 +81,16 @@ class DellaApp extends StatelessWidget {
                   ),
                   child: const Text('Press Me'),
                 ),
+                TextButton(
+                  onPressed: () {
+                    // Aksi ketika tombol ditekan
+                    debugPrint("TextButton ditekan!");
+                  },
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.white,
+                  ),
+                  child: const Text('Text Button'),
+                ),
               ],
             ),
           ),
