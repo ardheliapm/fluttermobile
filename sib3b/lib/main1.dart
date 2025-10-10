@@ -16,52 +16,65 @@ class DellaApp extends StatelessWidget {
         appBar: AppBar(
           title: Row(
             children: const [
-              Icon(Icons.account_circle, size: 40,color: Colors.white,),
+              Icon(Icons.account_circle, size: 40, color: Colors.white),
               SizedBox(width: 12),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Flutternya Della', style: TextStyle(fontSize: 18,color: Colors.white)),
-                    Text('Della App', style: TextStyle(fontSize: 12,color: Colors.white70)),
+                    Text(
+                      'Flutternya Della',
+                      style: TextStyle(fontSize: 18, color: Colors.white),
+                    ),
+                    Text(
+                      'Della App',
+                      style: TextStyle(fontSize: 12, color: Colors.white70),
+                    ),
                   ],
                 ),
               ),
             ],
           ),
           centerTitle: false,
-          foregroundColor: Color.fromARGB(255, 253, 253, 253),
-          backgroundColor: Color.fromARGB(255, 187, 51, 121),
+          backgroundColor: const Color.fromARGB(255, 187, 51, 121),
           actions: const [
-            Icon(Icons.search),
+            Icon(Icons.search, color: Colors.white),
             SizedBox(width: 10),
-            Icon(Icons.more_vert),
+            Icon(Icons.more_vert, color: Colors.white),
             SizedBox(width: 10),
-            Icon(Icons.settings),
+            Icon(Icons.settings, color: Colors.white),
             SizedBox(width: 8),
           ],
         ),
         backgroundColor: const Color.fromARGB(255, 224, 164, 184),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              Text('You have pushed the button this many times:', style: TextStyle(color: Colors.white),),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.star, color: Colors.amber),
-                  Icon(Icons.star, color: Colors.amber),
-                  Icon(Icons.star, color: Colors.amber),
-                  Icon(Icons.star_half, color: Colors.amber),
-                  Icon(Icons.star_border, color: Colors.amber),
-                ],
-              ),
-            ],
+        body: Container(
+          alignment: Alignment.center,
+          color: const Color.fromARGB(255, 60, 19, 32),
+          height: 200,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const <Widget>[
+                Text(
+                  'You have pushed the button this many times:',
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.star, color: Colors.amber),
+                    Icon(Icons.star, color: Colors.amber),
+                    Icon(Icons.star, color: Colors.amber),
+                    Icon(Icons.star_half, color: Colors.amber),
+                    Icon(Icons.star_border, color: Colors.amber),
+                  ],
+                ),
+              ],
+            ),
           ),
-        ), // <- pastikan Center ditutup di sini
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           tooltip: 'Increment',
@@ -100,9 +113,18 @@ class DellaApp extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
-            BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'School',
+            ),
           ],
         ),
       ),
