@@ -52,8 +52,31 @@ class DellaApp extends StatelessWidget {
           margin: const EdgeInsets.all(20),
           padding: const EdgeInsets.all(16),
           alignment: Alignment.center,
-          color: const Color.fromARGB(255, 60, 19, 32),
+          //color: const Color.fromARGB(255, 60, 19, 32),
           height: 200,
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [
+                Color.fromARGB(255, 187, 51, 121),
+                Color.fromARGB(255, 95, 12, 37),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            //color: const Color.fromARGB(255, 95, 12, 37),
+            borderRadius: BorderRadius.horizontal(
+              left: Radius.circular(30),
+              right: Radius.circular(30),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color.fromARGB(255, 255, 254, 254),
+                spreadRadius: 2,
+                blurRadius: 8,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
