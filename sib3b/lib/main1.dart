@@ -49,6 +49,8 @@ class DellaApp extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 224, 164, 184),
         body: Container(
+          margin: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(16),
           alignment: Alignment.center,
           color: const Color.fromARGB(255, 60, 19, 32),
           height: 200,
