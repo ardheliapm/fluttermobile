@@ -5,6 +5,7 @@ class TugasProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 224, 164, 184),
 
@@ -49,7 +50,7 @@ class TugasProfilePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // BOX PERTAMA
+            // BOX PERTAMA PINK BESAR
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -118,7 +119,66 @@ class TugasProfilePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
+          Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.95),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Mata Kuliah Semester 5',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF6C0F37),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
 
+                  //mata kuliah menggunakan listview
+                  SizedBox(
+                    height: 280, 
+                    child: ListView(
+                      children: const [
+                        ListTile(
+                          leading:
+                              Icon(Icons.book, color: Color(0xFFCE4C8C)),
+                          title: Text('Kecerdasan Bisnis'),
+                          subtitle: Text('Dosen: Dr. Dummy 1'),
+                        ),
+                        ListTile(
+                          leading:
+                              Icon(Icons.book, color: Color(0xFFCE4C8C)),
+                          title: Text('Perencanaan Sumber Daya'),
+                          subtitle: Text('Dosen: Ir. Dummy 2'),
+                        ),
+                        ListTile(
+                          leading:
+                              Icon(Icons.book, color: Color(0xFFCE4C8C)),
+                          title: Text('Manajemen Proyek'),
+                          subtitle: Text('Dosen: Dr. Dummy 3'),
+                        ),
+                        ListTile(
+                          leading:
+                              Icon(Icons.book, color: Color(0xFFCE4C8C)),
+                          title: Text('Pemrograman Mobile'),
+                          subtitle: Text('Dosen: M.T. Dummy 4'),
+                        ),
+                        ListTile(
+                          leading:
+                              Icon(Icons.book, color: Color(0xFFCE4C8C)),
+                          title: Text('Manajemen Rantai Pasok'),
+                          subtitle: Text('Dosen: S.Kom Dummy 5'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
             
           ],
         ),
