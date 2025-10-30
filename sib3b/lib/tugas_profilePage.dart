@@ -6,10 +6,7 @@ class TugasProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // TODO: tambahkan AppBar di sini
-
       backgroundColor: const Color.fromARGB(255, 224, 164, 184),
-
 
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 187, 51, 121),
@@ -26,56 +23,105 @@ class TugasProfilePage extends StatelessWidget {
                       style: TextStyle(fontSize: 18, color: Colors.white)),
                   Text('Made by Della',
                       style: TextStyle(fontSize: 12, color: Colors.white70)),
-                  SizedBox(height: 6),
                 ],
               ),
             ),
           ],
         ),
-        actions: [
-          // 1) Email
-          IconButton(
-            icon: const Icon(Icons.email, color: Colors.white),
-            onPressed: () {},
-          ),
-          const SizedBox(width: 8),
-
-          // 2) Telepon
-          IconButton(
-            icon: const Icon(Icons.call, color: Colors.white),
-            onPressed: () {},
-          ),
-          const SizedBox(width: 8),
-
-          // 3) Avatar + dropdown info
-          Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: PopupMenuButton<int>(
-              offset: const Offset(0, 8),
-              child: const CircleAvatar(
-                radius: 16,
-                backgroundImage: NetworkImage(
-                  'https://cdn-icons-png.flaticon.com/512/847/847969.png',
-                ),
-              ),
-              itemBuilder: (context) => const [
-                PopupMenuItem<int>(
-                  enabled: false,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Ardhelia Putri Maharani',
-                          style: TextStyle(fontWeight: FontWeight.w600)),
-                      SizedBox(height: 4),
-                      Text('NIM: 2341760124',
-                          style: TextStyle(color: Colors.black54)),
-                    ],
-                  ),
-                ),
-              ],
+        actions: const [
+          Icon(Icons.email, color: Colors.white),
+          SizedBox(width: 8),
+          Icon(Icons.call, color: Colors.white),
+          SizedBox(width: 8),
+          CircleAvatar(
+            radius: 16,
+            backgroundImage: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/512/847/847969.png',
             ),
           ),
+          SizedBox(width: 12),
         ],
+      ),
+
+      //Bagian PROFIL
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // BOX PERTAMA
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFFCE4C8C), Color(0xFF6C0F37)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(28),
+                boxShadow: const [
+                  BoxShadow(
+                      color: Color(0x33000000),
+                      blurRadius: 12,
+                      offset: Offset(2, 6))
+                ],
+              ),
+              child: Column(
+                children: [
+                  // Foto profil
+                  const CircleAvatar(
+                    radius: 45,
+                    backgroundColor: Colors.white,
+                    backgroundImage: NetworkImage(
+                      'https://cdn-icons-png.flaticon.com/512/847/847969.png',
+                    ),
+                  ),
+                  const SizedBox(height: 14),
+
+                  // Nama dan jurusan
+                  const Text(
+                    'Ardhelia Putri Maharani',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    'Sistem Informasi Bisnis',
+                    style: TextStyle(color: Colors.white70, fontSize: 14),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // NIM
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 14, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: const Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.badge,
+                            color: Colors.white, size: 16),
+                        SizedBox(width: 6),
+                        Text(
+                          'NIM: 2341760124',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            
+          ],
+        ),
       ),
     );
   }
