@@ -1,12 +1,7 @@
-
-import 'tugas_homePage.dart';
-import 'tugas_profilePage.dart';
-import 'tugas_galleryPage.dart';
 import 'package:flutter/material.dart';
+import 'routes.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,18 +9,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-     debugShowCheckedModeBanner: false,
-      title : 'Tugas Flutter Layout dan Navigasi',
-      theme : ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor : Colors.pink),
+      debugShowCheckedModeBanner: false,
+      title: 'Tugas Flutter Layout dan Navigasi',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink),
         useMaterial3: true,
       ),
-      initialRoute: '/',
-      routes: {
-        '/':        (context) => const TugasHomePage(),
-        '/profile': (context) => const TugasProfilePage(),
-        '/gallery': (context) => const TugasGalleryPage(),
-      },
+      initialRoute: Routes.home,
+      routes: Routes.map, // ← tinggal pakai
     );
   }
 }
