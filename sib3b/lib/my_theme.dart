@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
+import 'theme_controller.dart';
 
-class MyTheme extends InheritedWidget {
-  final Color primaryColor;
-  final bool isDarkMode;
-
+class MyTheme extends InheritedNotifier<ThemeController> {
   const MyTheme({
     super.key,
-    required this.primaryColor,
-    required this.isDarkMode,
+    required ThemeController controller,
     required super.child,
-  });
+  }) : super(notifier: controller);
 
-  static MyTheme of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<MyTheme>()!;
-  }
-
-  @override
-  bool updateShouldNotify(MyTheme oldWidget) {
-    return primaryColor != oldWidget.primaryColor ||
-           isDarkMode != oldWidget.isDarkMode;
+  static ThemeController of(BuildContext context) {
+    return context
+        .dependOnInheritedWidgetOfExactType<MyTheme>()!
+        .notifier!;
   }
 }

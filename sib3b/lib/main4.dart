@@ -1,44 +1,24 @@
 import 'package:flutter/material.dart';
 import 'my_theme.dart';
+import 'theme_controller.dart';
+import 'home_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  final controller = ThemeController();
 
   @override
   Widget build(BuildContext context) {
     return MyTheme(
-      primaryColor: Colors.blue,
-      isDarkMode: false,
+      controller: controller,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: const MyHomePage(),
-      ),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // ambil data inheritedwidget
-    final theme = MyTheme.of(context);
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("InheritedWidget Demo"),
-        backgroundColor: theme.primaryColor,
-      ),
-      body: Center(
-        child: Text(
-          "Dark Mode: ${theme.isDarkMode}",
-          style: TextStyle(fontSize: 24),
-        ),
+        home: MyHomePage(),
       ),
     );
   }
